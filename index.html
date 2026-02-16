@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fidelity Style Investment Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#222;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#2f7d2f;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.btn{
+    padding:10px 18px;
+    border-radius:25px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.open-btn{
+    background:white;
+    color:#2f7d2f;
+}
+
+.login-btn{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+}
+
+/* ===== HERO SECTION ===== */
+.hero{
+    height:520px;
+    background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    padding:60px;
+}
+
+.hero-card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    width:480px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-card h1{
+    font-size:40px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.hero-card p{
+    color:#555;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+.cta{
+    display:flex;
+    gap:15px;
+}
+
+.green{
+    background:#2f7d2f;
+    color:white;
+}
+
+.outline{
+    background:white;
+    border:1px solid #ccc;
+}
+
+/* ===== EXPERTISE SECTION ===== */
+.section{
+    padding:60px 40px;
+    text-align:center;
+}
+
+.section h2{
+    font-size:34px;
+    margin-bottom:40px;
+    font-weight:500;
+}
+
+/* ===== CARDS ===== */
+.cards{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:320px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    text-align:left;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.meta{
+    font-size:13px;
+    color:#888;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+
+.hero{
+    padding:20px;
+    height:auto;
+}
+
+.hero-card{
+    width:100%;
+}
+
+.nav-links{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+    <div class="logo">Fidelity</div>
+
+    <div class="nav-links">
+        <a href="#">Accounts & Trade</a>
+        <a href="#">Retirement</a>
+        <a href="#">Planning & Advice</a>
+        <a href="#">News & Research</a>
+
+        <button class="btn open-btn">Open an account</button>
+        <button class="btn login-btn">Log in</button>
+    </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+
+    <div class="hero-card">
+        <h1>Take transferring accounts off your to-do list</h1>
+
+        <p>
+        We've made it easy to get started when you want
+        to transfer your old accounts or even cash.
+        </p>
+
+        <div class="cta">
+            <button class="btn green">Open an account</button>
+            <button class="btn outline">Start a Transfer</button>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===== EXPERTISE ===== -->
+<section class="section">
+
+    <h2>Expertise you can act on</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+            <div class="card-content">
+                <h3>3 ways to use your health savings account</h3>
+                <p>Know the type of HSA user you are and make your money work harder.</p>
+                <div class="meta">Article • 6 min</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296">
+            <div class="card-content">
+                <h3>Market Sense: Weekly insights</h3>
+                <p>Experts discuss headlines, market conditions and what it means for you.</p>
+                <div class="meta">Webinar • 24 min</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+            <div class="card-content">
+                <h3 style="color:#2f7d2f;">How to start investing</h3>
+                <p>It doesn't have to be complicated. Here's how to start.</p>
+                <div class="meta">Article • 6 min</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
