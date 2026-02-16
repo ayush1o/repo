@@ -1,266 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fidelity Style Investment Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Excellence | Fidelity Concept</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2f7d2f;
+            --dark-green: #1e521e;
+            --light-bg: #f8fafc;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-<style>
+        body {
+            background: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-/* ===== GLOBAL ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-}
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-body{
-    background:#f4f4f4;
-    color:#222;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            letter-spacing: -0.5px;
+        }
 
-/* ===== NAVBAR ===== */
-.navbar{
-    background:#2f7d2f;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-}
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+        }
 
-.logo{
-    font-size:28px;
-    font-weight:700;
-}
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-align: center;
+        }
 
-.nav-links{
-    display:flex;
-    gap:25px;
-    align-items:center;
-}
+        .btn-primary { background: var(--primary-green); color: var(--white); }
+        .btn-primary:hover { background: var(--dark-green); transform: translateY(-1px); }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-}
+        .btn-outline { 
+            background: transparent; 
+            border: 1.5px solid var(--primary-green); 
+            color: var(--primary-green); 
+        }
+        .btn-outline:hover { background: #f0fdf4; }
 
-.btn{
-    padding:10px 18px;
-    border-radius:25px;
-    border:none;
-    cursor:pointer;
-    font-weight:600;
-}
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            padding: 40px 5%;
+        }
 
-.open-btn{
-    background:white;
-    color:#2f7d2f;
-}
+        .hero-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            max-width: 550px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
 
-.login-btn{
-    background:transparent;
-    border:1px solid white;
-    color:white;
-}
+        .hero-card h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
 
-/* ===== HERO SECTION ===== */
-.hero{
-    height:520px;
-    background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    padding:60px;
-}
+        .hero-card p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
 
-.hero-card{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    width:480px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
 
-.hero-card h1{
-    font-size:40px;
-    margin-bottom:20px;
-    font-weight:600;
-}
+        /* ===== CONTENT SECTION ===== */
+        .section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.hero-card p{
-    color:#555;
-    margin-bottom:25px;
-    line-height:1.6;
-}
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
 
-.cta{
-    display:flex;
-    gap:15px;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-.green{
-    background:#2f7d2f;
-    color:white;
-}
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid #edf2f7;
+        }
 
-.outline{
-    background:white;
-    border:1px solid #ccc;
-}
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.07);
+        }
 
-/* ===== EXPERTISE SECTION ===== */
-.section{
-    padding:60px 40px;
-    text-align:center;
-}
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-.section h2{
-    font-size:34px;
-    margin-bottom:40px;
-    font-weight:500;
-}
+        .card-body {
+            padding: 24px;
+        }
 
-/* ===== CARDS ===== */
-.cards{
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
+        .card-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+            display: block;
+        }
 
-.card{
-    background:white;
-    width:320px;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    text-align:left;
-}
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
 
-.card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
-.card-content{
-    padding:20px;
-}
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 60px 5% 30px;
+        }
 
-.card h3{
-    margin-bottom:10px;
-    font-weight:600;
-}
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
 
-.card p{
-    color:#666;
-    font-size:14px;
-    margin-bottom:15px;
-}
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
 
-.meta{
-    font-size:13px;
-    color:#888;
-}
+        .footer-col ul {
+            list-style: none;
+        }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
 
-.hero{
-    padding:20px;
-    height:auto;
-}
+        .footer-col a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
 
-.hero-card{
-    width:100%;
-}
+        .footer-col a:hover { color: var(--white); }
 
-.nav-links{
-    display:none;
-}
+        .footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 30px;
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+        }
 
-}
-
-</style>
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero { text-align: center; padding: 20px; justify-content: center; }
+            .hero-btns { flex-direction: column; }
+            .hero-card h1 { font-size: 1.8rem; }
+            .nav-actions .btn { padding: 8px 15px; font-size: 0.8rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<div class="navbar">
-    <div class="logo">Fidelity</div>
-
-    <div class="nav-links">
-        <a href="#">Accounts & Trade</a>
-        <a href="#">Retirement</a>
-        <a href="#">Planning & Advice</a>
-        <a href="#">News & Research</a>
-
-        <button class="btn open-btn">Open an account</button>
-        <button class="btn login-btn">Log in</button>
-    </div>
-</div>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-
-    <div class="hero-card">
-        <h1>Take transferring accounts off your to-do list</h1>
-
-        <p>
-        We've made it easy to get started when you want
-        to transfer your old accounts or even cash.
-        </p>
-
-        <div class="cta">
-            <button class="btn green">Open an account</button>
-            <button class="btn outline">Start a Transfer</button>
+    <nav class="navbar">
+        <div class="logo">Fidelity</div>
+        <div class="nav-actions">
+            <button class="btn btn-outline">Log In</button>
+            <button class="btn btn-primary">Open Account</button>
         </div>
-    </div>
+    </nav>
 
-</section>
-
-<!-- ===== EXPERTISE ===== -->
-<section class="section">
-
-    <h2>Expertise you can act on</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-            <div class="card-content">
-                <h3>3 ways to use your health savings account</h3>
-                <p>Know the type of HSA user you are and make your money work harder.</p>
-                <div class="meta">Article • 6 min</div>
+    <section class="hero">
+        <div class="hero-card">
+            <h1>Transferring assets shouldn't be work.</h1>
+            <p>Experience a seamless transition. Whether it's an old 401(k) or existing brokerage assets, we handle the heavy lifting so you can focus on your goals.</p>
+            <div class="hero-btns">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-outline">Learn About Transfers</button>
             </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296">
-            <div class="card-content">
-                <h3>Market Sense: Weekly insights</h3>
-                <p>Experts discuss headlines, market conditions and what it means for you.</p>
-                <div class="meta">Webinar • 24 min</div>
+    <section class="section">
+        <h2>Expertise you can act on</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80" alt="HSA tips">
+                <div class="card-body">
+                    <span class="card-tag">Article • 6 min</span>
+                    <h3>3 ways to use your health savings account</h3>
+                    <p>Maximize your tax-advantaged growth and understand how to leverage your HSA for long-term wealth.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" alt="Market insights">
+                <div class="card-body">
+                    <span class="card-tag">Webinar • 24 min</span>
+                    <h3>Market Sense: Weekly Insights</h3>
+                    <p>Join our experts as they break down the week's biggest headlines and what they mean for your portfolio.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&q=80" alt="Investing basics">
+                <div class="card-body">
+                    <span class="card-tag">Guide • 10 min</span>
+                    <h3>How to start investing</h3>
+                    <p>From choosing an account to picking your first fund, we make the complex world of investing simple.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
-            <div class="card-content">
-                <h3 style="color:#2f7d2f;">How to start investing</h3>
-                <p>It doesn't have to be complicated. Here's how to start.</p>
-                <div class="meta">Article • 6 min</div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Accounts</h4>
+                <ul>
+                    <li><a href="#">Brokerage</a></li>
+                    <li><a href="#">Retirement/IRA</a></li>
+                    <li><a href="#">Planning & Advice</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>News & Research</h4>
+                <ul>
+                    <li><a href="#">Markets</a></li>
+                    <li><a href="#">Quotes</a></li>
+                    <li><a href="#">Learning Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Find an Investor Center</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
             </div>
         </div>
-
-    </div>
-
-</section>
+        <div class="footer-bottom">
+            <p>&copy; 2024-2026 FMR LLC. All rights reserved.</p>
+            <p style="margin-top: 15px;">Investing involves risk, including risk of loss. Fidelity Brokerage Services LLC, Member NYSE, SIPC.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
